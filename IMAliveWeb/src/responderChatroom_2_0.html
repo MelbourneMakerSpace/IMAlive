@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Responder Chatroom</title>
+      <style rel='stylesheet' type='text/css'>
+
+        #chatroomPage {
+          border: 1px red solid;
+          font-size: 16px;
+          max-width: 90%;
+        }
+
+        #leftContainer {
+          float: left;
+          border: 1px pink solid;
+          width: 50%;
+        }
+        #rightContainer {
+          float: left;
+          width: 38%;
+          min-width: 300px;
+        }
+            #statusBar {
+              border: 1px blue solid;
+              display: inline-block;
+              width: 99%;
+            }
+            #conversationWindow {
+                border: 2px orange solid;
+            }
+                #status {
+                  float: left;
+                }
+                #PIC {
+                  float: right;
+                }
+          #field1 {
+            border-color: rgb(0,255,20);
+            height: 500px;
+            width: 95%;
+          }
+
+          .responderChat {
+            color: lightgreen;
+          }
+          .picChat {
+            color: blue;
+          }
+
+          .textBar {
+            vertical-align: middle;
+            float: left;
+          }
+
+          textarea {
+            margin-left: .2%;
+            border: 2px purple solid;
+            height: 50px;
+            width: 88%;
+          }
+
+
+
+          .sendButtonTheme {
+            position: relative;
+            border-radius: 10%;
+            border: 1px black solid;
+            color: rgb(255,255,255);
+            width: 10%;
+          }
+
+
+          #sendButton {
+            background-color: rgb(0,0,255);
+          }
+
+
+
+
+        #field2 {
+          height: 50%;
+          width: 127%;
+        }
+        .containers {
+          display: inline-block;
+          vertical-align: top;
+        }
+
+        .formInfo {
+          display: block;
+          margin-bottom: 3%;
+        }
+
+        table {
+          border: 2px black solid;
+          width: 133%;
+        }
+
+        th {
+          background: lightgrey;
+        }
+        tbody {
+          transform: translate(0px, 0px);  /*SCROLL Functionality    MORE RESEARCH*/
+          /* Check Jquery  */
+
+          /*  Something like this
+                hover (
+                  $('tbody').scroll/2fingers(function(){
+                      transform.Y-axis();
+                  })
+                )
+          */
+
+        }
+        #quickResponses button {
+          background: rgb(255,0,0);
+          color: rgb(255,255,255);
+          width: 100%;
+          border-radius: 20%;
+        }
+        /*#subBoxes {
+          display: inline-block;
+        }*/
+
+
+
+      </style>
+  </head>
+  <body>
+    <div id='chatroomPage'>
+
+        <div id="leftContainer" class='containers'>
+            <div id="chatRoom">
+                  <center><div id='statusBar'>
+                      <h6 id='status' class='topBar'>IMOnline</h6><h6 class='topBar' id='PIC'>Responder: <a href="#">Name here</a></h6>
+                  </div></center>
+
+                    <fieldset id='field1'>
+                        <center>CONVO HERE</center>
+                        <p> <strong class='responderChat'>Me: </strong> Thanks for contacting IMALIVE.org. If this is a medical emergency, please dial 911 or go to the nearest emergency room.</p>
+                        <p><strong class='picChat'>PIC: </strong>I wanna die!!!</p>
+                        <p> <strong class='responderChat'>Me: </strong> So do I but I got kids to feed. Do you?</p>
+
+                    </fieldset>
+
+                  <textarea class="textBar" name="" rows="1" cols="80"></textarea>
+                  <button id='sendButton' class="sendButtonTheme" type="button" name="button">Send</button>
+                  <button class="sendButtonTheme" type="button" name="button" style="background: rgb(255,0,0); color: rgb(255,255,255);">DANGER</button>
+                  <button class="sendButtonTheme" type="button" name="button" style="background: rgb(0,0,0); color: rgb(255,255,255);">911</button>
+            </div>
+        </div>
+
+        <div id="rightContainer" class='containers'>
+            <div id="quickResponses">
+                <table>
+                  ***I think responders should be able to have their own quick responses?<br><br>
+                  <thead>
+                      <th>Response</th><th>Action</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Do you have a history of substance abuse?</td>
+                      <td><center><button type="button" name="button">Send</button></center></td>
+                    </tr>
+                    <tr>
+                      <td>Are you currently intoxicated?</td>
+                      <td><center><button type="button" name="button">Send</button></center></td>
+                    </tr>
+                    <tr>
+                      <td>How old are you?</td>
+                      <td><center><button type="button" name="button">Send</button></center></td>
+                    </tr>
+                    <tr>
+                      <td>How are you feeling right now?</td>
+                      <td><center><button type="button" name="button">Send</button></center></td>
+                    </tr>
+                    <tr>
+                      <td>Are you okay?</td>
+                      <td><center><button type="button" name="button">Send</button></center></td>
+                    </tr>
+                    <tr>
+                      <td>How has your day been?</td>
+                      <td><center><button type="button" name="button">Send</button></center></td>
+                    </tr>
+                    <tr>
+                      <td>Are there Children present?</td>
+                      <td><center><button type="button" name="button">Send</button></center></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+
+            <fieldset id='field2'>
+                <legend>Available Information</legend>
+                  <div class='subBoxes'>
+                    <label class='formInfo'>Name: <input placeholder="John Doe" type="text" name="" value=""></label>
+                    <label class='formInfo'>Phone: <input placeholder="555-555-0000" type="text" name="" value=""></label>
+                    <label class='formInfo'>E-Mail: <input placeholder="qwerty@mail.com" type="email" name="" value=""></label>
+                  </div>
+                  <div class="subBoxes">
+                    GoogleMaps API Here, <br>Google does not Allow Iframes for Sec purposes<br>
+                    <!-- https://www.google.com/maps/place/3400+James+St,+Melbourne,+FL+32901/@28.0580649,-80.5990957,16.96z/data=!4m5!3m4!1s0x88de12302bd39309:0xc3414614eefac834!8m2!3d28.058124!4d-80.596931 -->
+
+                    <iframe src="https://www.w3schools.com"></iframe>
+
+
+                  </div>
+            </fieldset>
+        </div>
+
+
+    </div>
+  </body>
+</html>
