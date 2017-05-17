@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IM ALIVE Login</title>
+  </head>
+  <body style='background: rgb(0,0,0);'>
+
+<!-- This will be converted into an AngularApp -->
+
+<style type='text/css' rel='stylesheet'>
+
+  /*
+      rem refers to root element;
+      em refers the nearest parent element
+  */
+  html {
+    font-size: 16px;
+    position: relative;
+  }
+
+  #loginContainer {
+    background: lightblue;
+    /*border: 1px red dashed;*/
+    border-radius: 10%;
+    width: 24rem;
+    margin-top: 20rem;
+    /*Center here*/
+  }
+
+  #logoBox {
+    position: relative;
+    /*border: 1px blue dashed;*/
+  }
+  #formContainer {
+    background-color: rgb(255,255,255);
+    border-bottom-right-radius: 40%;
+    border-bottom-left-radius: 40%;
+    /*Needs WORK*/
+  }
+      fieldset {
+        width: 20rem;
+        height: 7rem;
+        border-style: hidden;
+      }
+      #loginButton {
+        background: lightgreen;
+      }
+      #secret {
+        color: rgb(255,255,255);
+      }
+      .formInputs {
+        width: 13rem;
+        border-style: hidden;
+        border-bottom: 1px blue solid;
+
+      }
+
+</style>
+
+
+      <div class="" style='vertical-align: top; color:red;'>
+        <h1>Possibilities of Putting a Picture of Volunteers or Quotes or Daily Message</h1>
+      </div>
+
+    <center><div id="loginContainer">
+
+      <div id='logoBox'>
+      <!-- IM ALIVE Logo -->
+          <img src="https://www.imalive.org/images/logo.png" alt="">
+      </div>
+
+      <div id='formContainer'>
+        <fieldset>
+          <legend>Login</legend>
+          <span id='secret'>------</span>User: <input class='formInputs'type="text" name="" value="" placeholder="User"><br>
+          Password: <input placeholder="Password" class='formInputs' type="password" name="" value=""><br>
+          <!-- <input type="checkbox" name="" value="">Remeber Me -->
+          <label> Supervisor
+            <input type="checkbox" name="" value="Supervisor">
+          </label>
+          <label> Volunteer
+            <input type="checkbox" name="" value=""><br>
+          </label>
+          <input id='loginButton'type="submit" name="" value="Login">
+        </fieldset>
+      </div>
+
+      <div id='formContainer'>
+        <fieldset>
+          <legend>Login</legend>
+          <span id='secret'>------</span>User: <input class='formInputs'type="text" name="" value="" placeholder=""><br>
+          Password: <input placeholder="" class='formInputs' type="password" name="" value=""><br>
+          <label> Supervisor
+            <input type="checkbox" name="" value="Supervisor">
+          </label>
+          <label> Volunteer
+            <input type="checkbox" name="" value=""><br>
+          </label>
+          <!-- <input type="checkbox" name="" value="">Remeber Me -->
+          <input id='loginButton'type="submit" name="" value="Login">
+        </fieldset>
+      </div>
+
+
+      <div id='formContainer'>
+        <fieldset>
+          <legend>Login</legend>
+          <span id='secret'></span><input class='formInputs'type="text" name="" value="" placeholder="User"><br>
+          <input placeholder="Password" class='formInputs' type="password" name="" value=""><br>
+          <label> Supervisor
+            <input type="checkbox" name="" value="Supervisor">
+          </label>
+          <label> Volunteer
+            <input type="checkbox" name="" value=""><br>
+          </label>
+          <!-- <input type="checkbox" name="" value="">Remeber Me -->
+          <input id='loginButton'type="submit" name="" value="Login">
+        </fieldset>
+      </div>
+
+
+      <div id='formContainer'>
+        <fieldset>
+          <legend>Login</legend>
+          <span id='secret'>------</span>User: <input class='formInputs'type="text" name="" value="" placeholder=""><br>
+          Password: <input placeholder="" class='formInputs' type="password" name="" value=""><br>
+          <br>
+          <button id='loginButton' type="button" name="button">Supervisor</button>
+          <button id='loginButton' type="button" name="button">Volunteer</button>
+
+        </fieldset>
+      </div>
+
+    </div></center>
+
+
+
+  </body>
+</html>

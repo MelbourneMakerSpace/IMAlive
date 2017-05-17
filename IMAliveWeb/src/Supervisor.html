@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="utf-8">
+    <title>Supervisors View</title>
+    <style type='text/css' rel='stylesheet'>
+
+      #supervisorsContainer {
+        margin: 1%;
+        border: 1px yellow solid;
+        overflow: hidden;
+        position: relative;
+        /*background: tan;
+        color: grey;*/
+      }
+          .containers {
+            margin: 1%;
+            display: inline-block;
+            float: left;
+          }
+          #activeUsers {
+            border: 1px orange solid;
+            width: 42%;
+            float: left;
+          }
+
+              .statusBar {
+                border: 1px blue solid;
+                display: inline-block;
+                width: 99%;
+              }
+
+                  #status {
+                    float: left;
+                  }
+                  #PIC {
+                    float: right;
+                  }
+
+              #redAlert {
+
+              }
+                  .imgGrid {
+                      /*These are the Volunteers*/
+                  }
+                  img {
+                    width: 80px;
+                    height: 80px;
+                    margin: .3%;
+                  }
+              #redAlert div img {
+                border: 2px red solid;
+              }
+              #yellowAlert div img {
+                border: 2px yellow solid;
+              }
+              #greenAlert div img {
+                border: 2px lightgreen solid;
+              }
+
+            #convervastionViewer {
+              border: 1px blue solid;
+              vertical-align: top;
+              float: left;
+            }
+                #convo {
+                  height: 500px; /*This will be changed to percentage.*/
+                }
+
+                #unFlag {
+                  background: orange;
+                }
+                #emergency {
+                  background: rgb(255,0,0);
+                }
+    </style>
+  </head>
+  <body>
+    <div id="supervisorsContainer">
+
+      <!-- **I want to make sure the Supervisor has the option to mirror the left and right containers** -->
+<!-- LeftContainer -->   <!--Active Users-->
+
+      <div id='activeUsers' class='containers'>
+      <!-- StatusBar -->
+        <div class="statusBar">
+            <h6 id='status'>IMOnline</h6><h6 id='PIC'>Supervisor: <a href="#">Name here</a></h6>
+        </div>
+      <!-- RedAlert -->
+        <div id='redAlert'>
+
+          <h4>Intervention Required: (Number)</h4>
+          <div class="imgGrid">
+            <!-- /*These are the Volunteers*/ -->
+            <img src="" alt="Volunteer Name/IMG">
+          </div>
+        </div>
+      <!-- YellowAlert -->
+        <div id='yellowAlert'>
+          <h4>Might Need Help: (Number)</h4>
+          <div class="imgGrid">
+            <img src="" alt="Volunteer Name/IMG">
+            <img src="" alt="Volunteer Name/IMG">
+          </div>
+        </div>
+      <!-- GreenAlert -->
+        <div id="greenAlert">
+          <h4>Eneryones Okay: (Number)</h4>
+          <div class="imgGrid">
+            <img src="" alt="Volunteer Name/IMG">
+            <img src="" alt="Volunteer Name/IMG">
+            <img src="" alt="Volunteer Name/IMG">
+            <img src="" alt="Volunteer Name/IMG">
+            <img src="" alt="Volunteer Name/IMG">
+            <img src="" alt="Volunteer Name/IMG">
+            <img src="" alt="Volunteer Name/IMG">
+            <img src="" alt="Volunteer Name/IMG">
+            <img src="" alt="Volunteer Name/IMG">
+          </div>
+        </div>
+
+      </div>
+
+<!-- Right Container --> <!-- conversationDiv -->
+      <div id='convervastionViewer' class='containers'>    <!--This should be able to minimize and retract towards the screen edge.-->
+        <!-- WHOS conversation -->
+          <h4>You are viewing (RespndersName) chat.</h4>
+        <!-- Flagged Sentences -->
+          <div>
+              <h5>Flagged Sentences</h5>
+              <ol>
+                <li>I'm Going to kill my self!!!</li>
+                <li>I have a knife</li>
+                <li>F*** the world, Alcohol is my best friend</li>
+              </ol>
+          </div>
+        <!-- conversationWindow -->
+        <div class="">
+          <fieldset id="convo">
+              <p>PIC: Life sucks</p>
+              <p>Alex: No it doesn't</p>
+              <p>PIC: Cant Endure the pain. OH nooooooooo. Im Bleeding</p>
+              <p>Alex: You must have been a class clown!</p>
+          </fieldset>
+          <!-- textInputs/ flagging / 911 -->
+          <textarea name="name" rows="2" cols="80"></textarea><button type='button'>Send</button><br>
+          <button id='unFlag' type="button" name="button">UnFlag</button><button id="emergency" type="button" name="button">911 Alert</button>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
