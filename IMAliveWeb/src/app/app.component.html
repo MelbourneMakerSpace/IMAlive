@@ -1,4 +1,11 @@
-<h1>
-  {{title}}
-</h1>
-<router-outlet></router-outlet>
+<ul>
+  <button (click)="listPush()">List Push</button>
+  <button (click)="listRemove()">List Remove</button>
+  <button (click)="listUpdate()">List Update</button>
+  <button (click)="objUpdate()">Object Update</button>
+  <button (click)="objset()">Object Set</button>
+  <button (click)="objRemove()">Object Remove</button>
+  <li *ngFor="let course of courseList">{{course.description}}</li>
+</ul>
+<router-outlet>
+</router-outlet>
