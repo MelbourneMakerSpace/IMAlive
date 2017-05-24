@@ -7,13 +7,14 @@
             <img class="ui centered image" style="position:relative;left:5px;" src="https://www.imalive.org/images/logo.png" alt="IMAlive Logo">
           </div>
           <div class="ui centered row input">
-            <input placeholder="User ID" />
+            <input placeholder="User ID" #login />
           </div>
           <div class="ui centered row input">
-            <input placeholder="Password" type="password" />
+            <input placeholder="Password" type="password" #password />
           </div>
           <div class="ui centered row">
-            <button class="ui blue button">Login</button>
+            <button #loginButton (click)="tryLogin(login.value,password.value)" class="ui blue button fluid">Login</button>
+            <div [hidden]="!badLogin" class="ui small red message">Invalid Username or Password!</div>
           </div>
         </div>
       </div>
