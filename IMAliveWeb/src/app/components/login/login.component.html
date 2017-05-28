@@ -2,21 +2,25 @@
   <div class="ui grid">
     <div class="row" style="height:100vh">
       <div class="ui middle aligned centered four wide column">
-        <div class="ui grid raised segment padded">
-          <div class="ui row column top">
-            <img class="ui centered image" style="position:relative;left:5px;" src="https://www.imalive.org/images/logo.png" alt="IMAlive Logo">
+        <form #loginForm="ngForm">
+          <div class="ui grid raised segment padded" [class.loading]="testingLogin">
+            <div class="ui top attached label">Please enter a User ID and Password</div>
+            <div class="ui row column top">
+              <img class="ui centered image" style="position:relative;left:5px;" src="https://www.imalive.org/images/logo.png" alt="IMAlive Logo">
+            </div>
+            <div class="ui centered row input">
+              <input placeholder="User ID" type="email" email required [(ngModel)]="login" name="txtLogin" id="IMALogin" #txtLogin />
+            </div>
+            <div class="ui centered row input">
+              <input placeholder="Password" type="password" [(ngModel)]="password" name="txtPassword" minlength="4" required (keyup.enter)="tryLogin()"
+              />
+            </div>
+            <div class=" ui centered row ">
+              <button #loginButton (click)="tryLogin()" class="ui blue basic button fluid" [class.disabled]="!loginForm.valid">Login</button>
+              <div [hidden]="!badLogin " class="ui small red message ">Invalid Username or Password!</div>
+            </div>
           </div>
-          <div class="ui centered row input">
-            <input placeholder="User ID" #login />
-          </div>
-          <div class="ui centered row input">
-            <input placeholder="Password" type="password" #password />
-          </div>
-          <div class="ui centered row">
-            <button #loginButton (click)="tryLogin(login.value,password.value)" class="ui blue button fluid">Login</button>
-            <div [hidden]="!badLogin" class="ui small red message">Invalid Username or Password!</div>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>

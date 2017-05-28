@@ -6,11 +6,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCW3dAeAvtCrb3wXT4TYUpZQifN2E1zbW8",
-    authDomain: "angularfireu.firebaseapp.com",
-    databaseURL: "https://angularfireu.firebaseio.com",
-    projectId: "angularfireu",
-    storageBucket: "angularfireu.appspot.com",
-    messagingSenderId: "501263000485"
+    apiKey: "AIzaSyAceq3VPsGFONYvw8mxluYfAQsJ0tXlNps",
+    authDomain: "imalive-3d1b2.firebaseapp.com",
+    databaseURL: "https://imalive-3d1b2.firebaseio.com",
+    projectId: "imalive-3d1b2",
+    storageBucket: "imalive-3d1b2.appspot.com",
+    messagingSenderId: "744530973061"
   }
 };

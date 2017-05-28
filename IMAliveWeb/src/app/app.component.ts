@@ -1,58 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
-import 'rxjs/Rx'
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
+import { Observable } from "rxjs/Observable";
+import { LoginService } from "app/services/login.service";
 
 @Component({
   selector: 'IM-root',
   templateUrl: './app.component.html',
-  styles: []
+  styles: [],
+  providers: [LoginService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  courses$: FirebaseListObservable<any[]>
-  lesson$: FirebaseObjectObservable<any[]>
+  user: Observable<firebase.User>;
 
-  courseList: any;
-  lastCourse: any;
+  constructor(private loginService: LoginService) { }
 
-  constructor(private db: AngularFireDatabase) {
-    this.courses$ = db.list('courses');
+  ngOnInit() {
+    this.loginService.onLoginChange.subscribe(user => this.user = user);
 
-    this.courses$.subscribe(val => {
-      console.log(val);
-      this.courseList = val;
-    });
-
-    this.lesson$ = db.object('courses/-KjYxo4vNf6T0jMgB_kT');
-
-    this.courses$.map(courses => courses[courses.length - 1]).subscribe(
-      course => this.lastCourse = course
-    )
-  }
-
-  listPush() {
-    this.courses$.push({ description: "test:" + Date().toString() });
-  }
-
-  listRemove() {
-    this.courses$.remove(this.lastCourse);
-  }
-
-  listUpdate() {
-    this.courses$.update(this.lastCourse, { description: "modified:" + Date() })
-  }
-
-  objUpdate() {
-    this.lesson$.update({ description: "updated description" + Date().toString() })
-      .then(() => console.log("updated with update"));
-  }
-
-  objset() {
-    this.lesson$.set({ description: "updated description" })
-      .then(() => console.log("updated with set"));
-  }
-  objRemove() {
-    this.lesson$.remove()
-      .then(() => console.log("object removed"));
   }
 }

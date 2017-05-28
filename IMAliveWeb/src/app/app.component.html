@@ -1,2 +1,22 @@
+<div class="ui secondary blue pointing menu" *ngIf="user">
+    <a class="ui item">
+<img class="ui tiny centered image" style="position:relative;left:5px;top:5px;"  src="https://www.imalive.org/images/logo.png" alt="IMAlive Logo">
+    </a>
+    <a class="active item">
+    Home
+  </a>
+    <a class="item">
+    Messages
+  </a>
+    <a class="item">
+    Friends
+  </a>
+    <div class="right menu">
+        <a class="ui item">Logged in as {{user.email}}</a>
+        <a class="ui item">
+      Logout
+    </a>
+    </div>
+</div>
 <router-outlet>
 </router-outlet>
