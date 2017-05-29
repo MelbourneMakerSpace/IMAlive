@@ -4,6 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import { Observable } from "rxjs/Observable";
 import { LoginService } from "app/services/login.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'IM-root',
@@ -13,12 +14,16 @@ import { LoginService } from "app/services/login.service";
 })
 export class AppComponent implements OnInit {
 
-  user: Observable<firebase.User>;
+  user: firebase.User;
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
-    this.loginService.onLoginChange.subscribe(user => this.user = user);
-
+    this.loginService.user$.subscribe((user) => this.user = user);
   }
-}
+
+  logout() {
+    this.loginService.logout();
+    this.router.navigate(['/Login']);
+  }
+} 

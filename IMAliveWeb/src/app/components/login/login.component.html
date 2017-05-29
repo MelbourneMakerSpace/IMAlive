@@ -16,8 +16,8 @@
               />
             </div>
             <div class=" ui centered row ">
-              <button #loginButton (click)="tryLogin()" class="ui blue basic button fluid" [class.disabled]="!loginForm.valid">Login</button>
-              <div [hidden]="!badLogin " class="ui small red message ">Invalid Username or Password!</div>
+              <button #loginButton (click)="tryLogin()" class="ui fluid blue basic button" [class.disabled]="!loginForm.valid">Login</button>
+              <div [hidden]="!badLogin " class="ui fluid small red message ">Invalid Username or Password!</div>
             </div>
           </div>
         </form>
