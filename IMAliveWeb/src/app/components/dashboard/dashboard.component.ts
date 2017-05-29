@@ -9,11 +9,12 @@ import { Router } from "@angular/router";
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(loginService: LoginService, router: Router) {
-    if (!loginService.user) { router.navigate(['/Login']) }
+  constructor(private loginService: LoginService, private router: Router) {
   }
 
   ngOnInit() {
+
+    if (!this.loginService.user) { this.router.navigateByUrl("/Login/Dashboard", { skipLocationChange: true }); }
   }
 
 }

@@ -12,6 +12,15 @@ const routes: Routes = [
   {
     path: 'Login',
     component: LoginComponent
+  },
+  {
+    path: 'Login/:path',
+    component: LoginComponent
+  }
+  ,
+  {
+    path: 'Login/:path/:value',
+    component: LoginComponent
   }
   ,
   {
