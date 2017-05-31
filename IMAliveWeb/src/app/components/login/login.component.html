@@ -1,3 +1,8 @@
+<style>
+  .red {
+    background-color: red;
+  }
+</style>
 <div class="ui container">
   <div class="ui grid">
     <div class="row" style="height:100vh">
@@ -11,12 +16,13 @@
             <div class="ui centered row input">
               <input placeholder="User ID" type="email" email required [(ngModel)]="login" name="txtLogin" id="IMALogin" #txtLogin />
             </div>
-            <div class="ui centered row input">
+            <div class="ui centered row input" [class.error]="txtPassword">
               <input placeholder="Password" type="password" [(ngModel)]="password" name="txtPassword" minlength="4" required (keyup.enter)="tryLogin()"
               />
             </div>
             <div class=" ui centered row ">
-              <button #loginButton (click)="tryLogin()" class="ui fluid blue basic button" [class.disabled]="!loginForm.valid">Login</button>
+              <button #loginButton (click)="tryLogin()" class="ui fluid blue basic button" [class.disabled]="
+                !loginForm.valid ">Login</button>
               <div [hidden]="!badLogin " class="ui fluid small red message ">Invalid Username or Password!</div>
             </div>
           </div>

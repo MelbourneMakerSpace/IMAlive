@@ -13,12 +13,20 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ResponderChatComponent } from './components/responder-chat/responder-chat.component';
+import { ChatViewComponent } from './components/chat-view/chat-view.component';
+import { ChatInputComponent } from './components/chat-input/chat-input.component';
+import { SeedDatabaseComponent } from './components/seed-database/seed-database.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    ResponderChatComponent,
+    ChatViewComponent,
+    ChatInputComponent,
+    SeedDatabaseComponent
   ],
   imports: [
     BrowserModule,
