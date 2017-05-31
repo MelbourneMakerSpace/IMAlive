@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component'
 import { LoginComponent } from './components/login/login.component'
 import { DashboardComponent } from './components/dashboard/dashboard.component'
+import { SeedDatabaseComponent } from "app/components/seed-database/seed-database.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,11 @@ const routes: Routes = [
   {
     path: 'Dashboard',
     component: DashboardComponent
+  }
+  ,
+  {
+    path: 'SeedDatabase',
+    component: SeedDatabaseComponent
   }
 ];
 
