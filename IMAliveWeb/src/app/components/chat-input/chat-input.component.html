@@ -1,3 +1,2 @@
-<p>
-  chat-input works!
-</p>
+<input type="text" placeholder="Say..." (keyup.enter)="sendChat(inputText)" #inputText>
+<button class="ui basic green button" (click)="sendChat(inputText)">Send</button>

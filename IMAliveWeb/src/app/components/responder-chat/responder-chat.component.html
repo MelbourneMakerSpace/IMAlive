@@ -1,11 +1,15 @@
-<div class="ui raised segments">
-  <div class="ui fluid segment top attached header">
-    Responder Chat
-  </div>
-  <div class="ui fluid segment attached" style="height:50vh">
-    <im-chat-view></im-chat-view>
-  </div>
-  <div class="ui fluid segment bottom attached">
-    <im-chat-input></im-chat-input>
+<div class="ui grid">
+  <div class="eight wide column">
+    <div class="ui raised segments">
+      <div class="ui fluid top attached header segment">
+        Responder Chat
+      </div>
+      <div class="ui segment" style="margin:0;height:50vh;padding:0px 0px 0px 5px;">
+        <im-chat-view [chatKey]="'-KlW9gmNc1njJVolnYhz'"></im-chat-view>
+      </div>
+      <div class="ui fluid segment bottom attached">
+        <im-chat-input [chatKey]="'-KlW9gmNc1njJVolnYhz'"></im-chat-input>
+      </div>
+    </div>
   </div>
 </div>
