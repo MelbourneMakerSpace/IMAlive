@@ -1,3 +1,20 @@
-<div class="features ui grid noMargin" style="height:100%;overflow-x:auto;">
-
+<div class="" style="height:100%;overflow-y:scroll;" #chatWindow>
+    <div class="ui comments">
+        <div class="comment" *ngFor="let chatMessage of chatMessages">
+            <a class="avatar">
+                <img src="http://via.placeholder.com/25x25">
+            </a>
+            <div class="content">
+                <a class="ui blue author" style="color:blue;" *ngIf="chatMessage.senderKey == 'Alex'">Alex</a>
+                <a class="author" style="color:green;" *ngIf="chatMessage.senderKey != 'Alex'">PIC</a>
+                <div class="metadata">
+                    <span class="date">{{chatMessage.chatSent | date:'medium'}}</span>
+                </div>
+                <div class="text">
+                    {{chatMessage.chatText}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
 </div>
