@@ -17,6 +17,8 @@ import { ResponderChatComponent } from './components/responder-chat/responder-ch
 import { ChatViewComponent } from './components/chat-view/chat-view.component';
 import { ChatInputComponent } from './components/chat-input/chat-input.component';
 import { SeedDatabaseComponent } from './components/seed-database/seed-database.component';
+import { VisitorComponent } from './components/visitor/visitor.component';
+import { VisitorChatComponent } from './components/visitor-chat/visitor-chat.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { SeedDatabaseComponent } from './components/seed-database/seed-database.
     ResponderChatComponent,
     ChatViewComponent,
     ChatInputComponent,
-    SeedDatabaseComponent
+    SeedDatabaseComponent,
+    VisitorComponent,
+    VisitorChatComponent
   ],
   imports: [
     BrowserModule,

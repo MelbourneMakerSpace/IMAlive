@@ -1,10 +1,12 @@
 
+import { ChatStatus } from "models/chat.status";
+
 export class Chat {
 
     public $key: string
     public PICName: string
     public ResponderKey: string
-    public chatStatus: string
+    public chatStatus: ChatStatus
     public chatStart: number
     public firstResponse: number
     public phone: string

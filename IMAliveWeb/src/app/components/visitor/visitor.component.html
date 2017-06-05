@@ -1,0 +1,27 @@
+<div class="ui container">
+  <div class="ui grid">
+    <div class="row" style="height:100vh">
+      <div class="ui middle aligned centered four wide column" style="min-width: 300px">
+        <form #loginForm="ngForm">
+          <div class="ui grid raised segment padded" [class.loading]="loading">
+            <div class="ui top attached label">Connect with a counselor</div>
+            <div class="ui row column top">
+              <img class="ui centered image" style="position:relative;left:5px;" src="https://www.imalive.org/images/logo.png" alt="IMAlive Logo">
+            </div>
+            <div class="ui centered row input">
+              <input placeholder="Your Name (optional)" type="text" [(ngModel)]="name" name="txtName" #txtName />
+            </div>
+            <div class="ui centered row input">
+              <input placeholder="e-mail (optional)" type="text" [(ngModel)]="email" name="txtEmail" #txtEmail />
+            </div>
+            <div class=" ui centered row ">
+              <button #loginButton (click)="connect(txtName.value, txtEmail.value)" class="ui fluid blue basic button" [class.disabled]="
+                !loginForm.valid ">Connect</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

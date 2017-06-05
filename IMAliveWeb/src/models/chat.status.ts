@@ -1,1 +1,1 @@
-export type ChatStatus = "Waiting" | "Active" | "Supervised" | "Complete" | "Transferred" | "NeedsSupervisior";
+export enum ChatStatus { Waiting, Active, Supervised, Complete, Transferred, NeedsSupervisior }

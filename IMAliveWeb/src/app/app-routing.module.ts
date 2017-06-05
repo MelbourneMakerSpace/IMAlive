@@ -4,11 +4,16 @@ import { AppComponent } from './app.component'
 import { LoginComponent } from './components/login/login.component'
 import { DashboardComponent } from './components/dashboard/dashboard.component'
 import { SeedDatabaseComponent } from "app/components/seed-database/seed-database.component";
+import { VisitorComponent } from "app/components/visitor/visitor.component";
 
 const routes: Routes = [
   {
     path: '',
     component: LoginComponent
+  },
+  {
+    path: 'Visitor',
+    component: VisitorComponent
   },
   {
     path: 'Login',

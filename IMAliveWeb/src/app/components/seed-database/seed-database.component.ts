@@ -22,7 +22,7 @@ export class SeedDatabaseComponent implements OnInit {
 
   seedDatabase() {
     this.chat.chatStart = Date.now();
-    this.chat.chatStatus = "Waiting";
+    this.chat.chatStatus = ChatStatus.Waiting;
     this.chat.email = "tony.bellomo@gmail.com";
 
     console.log(JSON.stringify(this.chat));
