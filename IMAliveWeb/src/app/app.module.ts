@@ -19,6 +19,7 @@ import { ChatInputComponent } from './components/chat-input/chat-input.component
 import { SeedDatabaseComponent } from './components/seed-database/seed-database.component';
 import { VisitorComponent } from './components/visitor/visitor.component';
 import { VisitorChatComponent } from './components/visitor-chat/visitor-chat.component';
+import { ReadWriteChatComponent } from './components/read-write-chat/read-write-chat.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { VisitorChatComponent } from './components/visitor-chat/visitor-chat.com
     ChatInputComponent,
     SeedDatabaseComponent,
     VisitorComponent,
-    VisitorChatComponent
+    VisitorChatComponent,
+    ReadWriteChatComponent
   ],
   imports: [
     BrowserModule,
