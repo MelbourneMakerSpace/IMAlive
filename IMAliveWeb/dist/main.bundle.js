@@ -94,7 +94,7 @@ var routes = [
         component: __WEBPACK_IMPORTED_MODULE_2__components_login_login_component__["a" /* LoginComponent */]
     },
     {
-        path: '/Visitor',
+        path: 'Visitor',
         component: __WEBPACK_IMPORTED_MODULE_5_app_components_visitor_visitor_component__["a" /* VisitorComponent */]
     },
     {
@@ -298,16 +298,20 @@ var ChatInputComponent = (function () {
     }
     ChatInputComponent.prototype.ngOnInit = function () {
         this.renderer.invokeElementMethod(this.inputText.nativeElement, "focus");
+        alert("test!");
     };
     ChatInputComponent.prototype.sendChat = function (text) {
-        var chatMessage = new __WEBPACK_IMPORTED_MODULE_2_models_chatMessage__["a" /* ChatMessage */]();
-        chatMessage.chatKey = this.chatKey;
-        chatMessage.chatText = text.value;
-        chatMessage.chatSent = Date.now();
-        chatMessage.senderKey = "Alex";
-        this.db.list("chatMessages").push(chatMessage);
-        text.value = "";
-        text.focus();
+        alert("text value: " + text.value);
+        if (text.value != null && text.value != "") {
+            var chatMessage = new __WEBPACK_IMPORTED_MODULE_2_models_chatMessage__["a" /* ChatMessage */]();
+            chatMessage.chatKey = this.chatKey;
+            chatMessage.chatText = text.value;
+            chatMessage.chatSent = Date.now();
+            chatMessage.senderKey = "Alex";
+            this.db.list("chatMessages").push(chatMessage);
+            text.value = "";
+            text.focus();
+        }
     };
     return ChatInputComponent;
 }());

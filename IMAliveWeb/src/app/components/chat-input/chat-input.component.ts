@@ -20,16 +20,19 @@ export class ChatInputComponent implements OnInit {
   }
 
   sendChat(text) {
-    let chatMessage: ChatMessage = new ChatMessage();
+    if (text.value != null && text.value != "")
+    {
+      let chatMessage: ChatMessage = new ChatMessage();
 
-    chatMessage.chatKey = this.chatKey;
-    chatMessage.chatText = text.value;
-    chatMessage.chatSent = Date.now();
-    chatMessage.senderKey = "Alex";
+      chatMessage.chatKey = this.chatKey;
+      chatMessage.chatText = text.value;
+      chatMessage.chatSent = Date.now();
+      chatMessage.senderKey = "Alex";
 
-    this.db.list("chatMessages").push(chatMessage);
-    text.value = "";
-    text.focus();
+      this.db.list("chatMessages").push(chatMessage);
+      text.value = "";
+      text.focus();
+    }
   }
 
 }
