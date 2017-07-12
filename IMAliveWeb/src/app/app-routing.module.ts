@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component'
 import { DashboardComponent } from './components/dashboard/dashboard.component'
 import { SeedDatabaseComponent } from "app/components/seed-database/seed-database.component";
 import { VisitorComponent } from "app/components/visitor/visitor.component";
+import { SupervisorDashboardComponent } from "app/components/supervisor-dashboard/supervisor-dashboard.component";
 
 const routes: Routes = [
   {
@@ -32,6 +33,11 @@ const routes: Routes = [
   {
     path: 'Dashboard',
     component: DashboardComponent
+  }
+  ,
+  {
+    path: 'SupervisorDashboard',
+    component: SupervisorDashboardComponent
   }
   ,
   {
