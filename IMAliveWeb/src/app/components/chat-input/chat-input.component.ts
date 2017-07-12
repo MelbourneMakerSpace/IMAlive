@@ -20,7 +20,10 @@ export class ChatInputComponent implements OnInit {
   }
 
   sendChat(text) {
-    if (text.value != null && text.value != "")
+    //don't allow blank values or only spaces!
+    var regexp = /\s/gi; //match blank spaces
+    var testText = text.value.replace(regexp, "");
+    if (text.value != null && text.value != "" && testText.length > 0)
     {
       let chatMessage: ChatMessage = new ChatMessage();
 

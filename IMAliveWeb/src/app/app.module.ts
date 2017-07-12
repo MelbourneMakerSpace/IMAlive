@@ -20,7 +20,7 @@ import { SeedDatabaseComponent } from './components/seed-database/seed-database.
 import { VisitorComponent } from './components/visitor/visitor.component';
 import { VisitorChatComponent } from './components/visitor-chat/visitor-chat.component';
 import { ReadWriteChatComponent } from './components/read-write-chat/read-write-chat.component';
-import { SupervisorDashboardComponent } from './supervisor-dashboard/supervisor-dashboard.component';
+import { SupervisorDashboardComponent } from './components/supervisor-dashboard/supervisor-dashboard.component';
 
 @NgModule({
   declarations: [
