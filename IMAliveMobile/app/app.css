@@ -1,1 +1,10 @@
 @import "nativescript-theme-core/css/blue.css";
+Page {
+    background-color: white;
+    font-size: 20;
+}
+
+TextField {
+    padding: 10;
+    font-size: 20;
+}
