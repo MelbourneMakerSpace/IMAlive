@@ -13,5 +13,6 @@ import { routes, navigatableComponents } from "./app.routing";
   declarations: [AppComponent, LoginComponent, ...navigatableComponents],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA],
+  providers: []
 })
 export class AppModule { }
