@@ -21,8 +21,10 @@ export class LoginComponent {
     login(userName: string, password: string) {
         return firebase.login({
             type: firebase.LoginType.PASSWORD,
-            email: userName,
-            password: password
+            passwordOptions: {
+                email: userName,
+                password: password
+            }
         }).then((result: any) => {
             BackendService.token = result.uid;
             console.log("results:", JSON.stringify(result));
