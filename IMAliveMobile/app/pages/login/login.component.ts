@@ -44,7 +44,7 @@ export class LoginComponent {
         let pass = this.page.getViewById<TextField>("password").text;
         console.log("login:", login, " pass:", pass);
         this.login(login, pass);
-        //this.router.navigate(["/chat"]);
+        this.router.navigate(["/chat"]);
     }
 
 }
