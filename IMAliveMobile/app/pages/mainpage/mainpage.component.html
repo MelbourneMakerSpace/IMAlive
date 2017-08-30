@@ -3,9 +3,9 @@
         <Image src="res://logo" col="1" row="0" colSpan="2"></Image>
         <Button text="Chat Now" class="submit-button" (tap)="chatNow($event)" col="1" row="1" colSpan="2" width="50%" margin="20"></Button>
         <Label text="{{status}}" horizontalAlignment="center" col="1" row="2" [colSpan]="2"></Label>
-        <Switch checked="{{ useLatLong }}" col="1" row="3" verticalAlignment="center"></Switch>
+        <Switch col="1" row="3" verticalAlignment="center" (tap)="switchLatLong($event)"></Switch>
         <Label text="Share Location" col="2" row="3" verticalAlignment="center"></Label>
-        <Switch checked="{{ usePhoneNumber }}" col="1" row="4" verticalAlignment="center"></Switch>
+        <Switch col="1" row="4" verticalAlignment="center"></Switch>
         <Label text="Share Phone Number" col="2" row="4" verticalAlignment="center"></Label>
     </GridLayout>
 </Page>
