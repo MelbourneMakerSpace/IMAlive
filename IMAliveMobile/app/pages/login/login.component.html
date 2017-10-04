@@ -1,8 +1,13 @@
 <StackLayout>
+    <ActionBar title="IMAlive" icon="" class="action-bar">
+        <ActionItem (tap)="share()" text="Share" android.systemIcon="ic_menu_share_holo_dark" ios.systemIcon="9" ios.position="right">
+        </ActionItem>
+    </ActionBar>
     <Image src="res://logo" class="h1 p-l-15 p-r-15 p-t-15 text-center"></Image>
     <TextField hint="Email Address" keyboardType="email" autocorrect="false" id="login" autocapitalizationType="none"></TextField>
-    <TextField hint="Password here" secure="true" id="password"></TextField>
+    <TextField hint="Password" secure="true" id="password"></TextField>
 
     <Button text="Sign in" class="submit-button" (tap)="signIn($event)"></Button>
     <Button text="Register"></Button>
+    <ActivityIndicator [busy]="isLoading" [visibility]="isloading ? 'visible' : 'collapse'" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
 </StackLayout>

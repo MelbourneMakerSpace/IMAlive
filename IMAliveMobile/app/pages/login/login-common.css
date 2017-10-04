@@ -23,3 +23,8 @@ TextField {
     color: white;
     margin-top: 20;
 }
+
+ActionBar {
+    background-color: #56a7de;
+    color: white;
+}

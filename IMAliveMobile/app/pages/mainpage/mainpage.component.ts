@@ -34,6 +34,7 @@ export class MainpageComponent implements OnInit {
 		//console.log("latlong ok? ", this.useLatLong);
 		if (!isEnabled()) {
 			console.log("asking permission...")
+
 			enableLocationRequest().then(x => this.getLocation());
 		} else {
 			console.log("we have permission already");
