@@ -3,6 +3,7 @@ import { getCurrentLocation, isEnabled, enableLocationRequest, Location } from "
 import { Accuracy } from "ui/enums"
 import { PropertyChangeData } from "data/observable";
 import * as switchModule from "tns-core-modules/ui/switch";
+import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
 	selector: 'mainpage',
@@ -15,7 +16,7 @@ export class MainpageComponent implements OnInit {
 	usePhoneNumber: boolean = false;
 	useLatLong: boolean = false;
 
-	constructor() { }
+	constructor(private router: RouterExtensions) { }
 
 	ngOnInit() { }
 
@@ -50,5 +51,6 @@ export class MainpageComponent implements OnInit {
 	chatNow(event) {
 		//console.dir(event);
 		this.status = "Connecting to a volunteer...";
+		this.router.navigate(["/chat"]);
 	}
 }

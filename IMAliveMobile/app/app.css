@@ -1,7 +1,17 @@
-@import "nativescript-theme-core/css/blue.css";
+@import '~/nativescript-theme-core/css/blue.css';
 Page {
     background-color: white;
     font-size: 20;
+}
+
+.btn-green {
+    background-color: lightgreen;
+    color: black;
+}
+
+.btn-red {
+    color: black;
+    background-color: coral;
 }
 
 TextField {
