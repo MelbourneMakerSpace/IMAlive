@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var ChatMessage = (function () {
+    function ChatMessage() {
+    }
+    return ChatMessage;
+}());
+exports.ChatMessage = ChatMessage;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY2hhdE1lc3NhZ2UuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJjaGF0TWVzc2FnZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBO0lBUUk7SUFFQSxDQUFDO0lBQ0wsa0JBQUM7QUFBRCxDQUFDLEFBWEQsSUFXQztBQVhZLGtDQUFXIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNsYXNzIENoYXRNZXNzYWdlIHtcclxuXHJcbiAgICBwdWJsaWMgJGtleTogc3RyaW5nXHJcbiAgICBwdWJsaWMgY2hhdEtleTogc3RyaW5nXHJcbiAgICBwdWJsaWMgc2VuZGVyS2V5OiBzdHJpbmdcclxuICAgIHB1YmxpYyBjaGF0VGV4dDogc3RyaW5nXHJcbiAgICBwdWJsaWMgY2hhdFNlbnQ6IG51bWJlclxyXG5cclxuICAgIGNvbnN0cnVjdG9yKCkge1xyXG5cclxuICAgIH1cclxufSJdfQ==

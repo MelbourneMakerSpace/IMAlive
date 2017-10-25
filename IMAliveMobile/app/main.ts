@@ -6,7 +6,7 @@ import { BackendService } from "./services/backend.service";
 firebase.init({
     //persist should be set to false as otherwise numbers aren't returned during livesync
     persist: false,
-    storageBucket: 'gs://giftler-f48c4.appspot.com',
+    //storageBucket: 'gs://imalive-3d1b2.appspot.com/',
     onAuthStateChanged: (data: any) => {
         console.log(JSON.stringify(data))
         if (data.loggedIn) {

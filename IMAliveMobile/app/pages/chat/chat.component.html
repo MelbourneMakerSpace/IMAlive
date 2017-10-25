@@ -1,8 +1,8 @@
 <GridLayout rows="auto, *, auto" columns="*, auto, auto, auto">
     <Button class="btn btn-green" text="E-mail transcript" row="0" col="0" colspan="3"></Button>
     <button class="btn btn-red" text="Exit" row="0" col="3"></button>
-    <TextView hint="chat will be here" style="padding-left:20;padding-right:20;" class="input input-border" text="" row="1" col="0"
-        colspan="4"></TextView>
-    <TextField class="input input-border" text="" hint="Say something here..." row="2" col="0" colspan="3"></TextField>
-    <Button text="Send" class="btn btn-green" row="2" col="3"></Button>
+    <TextView hint="chat will be here" style="padding-left:20;padding-right:20;" class="input input-border" text="{{chatKey}}"
+        row="1" col="0" colspan="4"></TextView>
+    <TextField class="input input-border" id='chatText' text="" hint="Say something here..." row="2" col="0" colspan="3"></TextField>
+    <Button text="Send" class="btn btn-green" (tap)="sendChat()" row="2" col="3"></Button>
 </GridLayout>

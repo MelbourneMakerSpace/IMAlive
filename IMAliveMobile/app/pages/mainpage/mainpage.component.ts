@@ -4,11 +4,13 @@ import { Accuracy } from "ui/enums"
 import { PropertyChangeData } from "data/observable";
 import * as switchModule from "tns-core-modules/ui/switch";
 import { RouterExtensions } from 'nativescript-angular/router';
+import { ChatService } from '../../services/chat.service'
 
 @Component({
 	selector: 'mainpage',
 	templateUrl: 'pages/mainpage/mainpage.component.html',
-	styleUrls: ['pages/mainpage/mainpage.component.css']
+	styleUrls: ['pages/mainpage/mainpage.component.css'],
+	providers: [ChatService]
 })
 
 export class MainpageComponent implements OnInit {
@@ -16,7 +18,7 @@ export class MainpageComponent implements OnInit {
 	usePhoneNumber: boolean = false;
 	useLatLong: boolean = false;
 
-	constructor(private router: RouterExtensions) { }
+	constructor(private router: RouterExtensions, private chatService: ChatService) { }
 
 	ngOnInit() { }
 
@@ -49,8 +51,15 @@ export class MainpageComponent implements OnInit {
 	}
 
 	chatNow(event) {
+
 		//console.dir(event);
 		this.status = "Connecting to a volunteer...";
-		this.router.navigate(["/chat"]);
+		const pushResult = this.chatService.startChat();
+
+		pushResult.then(result => {
+			console.log("Created chat key:");
+			console.log(result.key);
+			this.router.navigate(["/chat", result.key]);
+		});
 	}
 }

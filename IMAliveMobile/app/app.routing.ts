@@ -4,7 +4,7 @@ import { MainpageComponent } from "./pages/mainpage/mainpage.component";
 
 export const routes = [
     { path: "", component: MainpageComponent },
-    { path: "chat", component: ChatComponent }
+    { path: "chat/:id", component: ChatComponent }
 ];
 
 export const navigatableComponents = [

@@ -1,0 +1,1 @@
+enum ChatStatus { ChatStatusWaiting, ChatStatusActive, ChatStatusSupervised, ChatStatusComplete, ChatStatusTransferred, ChatStatusNeedsSupervisior };
