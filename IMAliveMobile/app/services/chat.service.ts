@@ -1,12 +1,22 @@
-import { Injectable } from "@angular/core";
+import { Injectable, NgZone } from "@angular/core";
 import firebase = require("nativescript-plugin-firebase");
 import { ChatMessage } from '../models/chatMessage'
 import { Chat } from '../models/chat'
-import { PushResult } from "nativescript-plugin-firebase";
+import { PushResult, FBData } from "nativescript-plugin-firebase";
+import { BehaviorSubject } from "rxjs";
+import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class ChatService {
     chat: Chat = new Chat();
+    chatMessages: BehaviorSubject<ChatMessage>;
+
+    constructor(private ngZone: NgZone) {
+        let chatMessageStarter = new ChatMessage();
+        chatMessageStarter.chatText = "A counselor will be with you shortly...";
+        this.chatMessages = new BehaviorSubject(chatMessageStarter);
+    }
+
 
     sendMessage(message: string, chatKey: string): Promise<PushResult> {
         let chatMessage = new ChatMessage();
@@ -33,7 +43,19 @@ export class ChatService {
     monitorChatByKey(chatKey: string) {
 
         firebase.query(
-            this.onQueryEvent,
+            (result: FBData) => {
+                // note that the query returns 1 match at a time
+                // in the order specified in the query
+                if (result) {
+                    // console.log("Event type: " + result.type);
+                    // console.log("Key: " + result.key);
+                    // console.log("Value: " + JSON.stringify(result.value));
+
+                    this.chatMessages.next(result.value);
+                } else {
+                    console.log(result);
+                }
+            },
             "/chatMessages",
             {
                 orderBy: {
@@ -47,15 +69,5 @@ export class ChatService {
             });
     }
 
-    onQueryEvent(result) {
-        // note that the query returns 1 match at a time
-        // in the order specified in the query
-        if (!result.error) {
-            console.log("Event type: " + result.type);
-            console.log("Key: " + result.key);
-            console.log("Value: " + JSON.stringify(result.value));
-        } else {
-            console.log(result);
-        }
-    };
+
 }

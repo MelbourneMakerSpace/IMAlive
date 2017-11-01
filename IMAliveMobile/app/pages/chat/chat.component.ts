@@ -4,6 +4,7 @@ import { TextField } from "ui/text-field";
 import { Page } from "ui/page";
 import { ActivatedRoute } from "@angular/router";
 import { ChatService } from '../../services/chat.service'
+import { ChatMessage } from "../../models/chatMessage";
 
 
 @Component({
@@ -15,6 +16,7 @@ import { ChatService } from '../../services/chat.service'
 export class ChatComponent implements OnInit {
     chatKey: string;
     chatText: TextField;
+    chatMessages: Array<ChatMessage> = new Array<ChatMessage>();
 
     constructor(private page: Page, private route: ActivatedRoute, private chatService: ChatService) {
         const id = this.route.snapshot.params["id"];
@@ -25,6 +27,10 @@ export class ChatComponent implements OnInit {
         this.chatText = <TextField>this.page.getViewById("chatText");
         debugger;
         this.chatService.monitorChatByKey(this.chatKey);
+        this.chatService.chatMessages.subscribe((chatMessage: ChatMessage) => {
+            this.chatMessages.push(chatMessage);
+            console.dir(this.chatMessages);
+        });
     }
 
     sendChat() {
