@@ -12,9 +12,7 @@ export class ChatService {
     chatMessages: BehaviorSubject<ChatMessage>;
 
     constructor(private ngZone: NgZone) {
-        let chatMessageStarter = new ChatMessage();
-        chatMessageStarter.chatText = "A counselor will be with you shortly...";
-        this.chatMessages = new BehaviorSubject(chatMessageStarter);
+
     }
 
 
@@ -41,6 +39,15 @@ export class ChatService {
     }
 
     monitorChatByKey(chatKey: string) {
+
+        let chatMessageStarter = new ChatMessage();
+        chatMessageStarter.chatText = "A counselor will be with you shortly...";
+        chatMessageStarter.chatKey = chatKey;
+        chatMessageStarter.chatSent = Date.now();
+        chatMessageStarter.senderKey = "Auto";
+        this.chatMessages = new BehaviorSubject(chatMessageStarter);
+
+        //this.sendMessage("A counselor will be with you shortly...", chatKey);
 
         firebase.query(
             (result: FBData) => {
