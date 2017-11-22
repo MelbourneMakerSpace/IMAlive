@@ -9,22 +9,21 @@ import { ChatMessage } from "models/chatMessage";
   host: { class: "ui input fluid" }
 })
 export class ChatInputComponent implements OnInit {
-  @Input() chatKey: string = "";
   @ViewChild('inputText') inputText: ElementRef;
-
+  @Input() chatKey: string = "";
 
   constructor(private db: AngularFireDatabase, private renderer: Renderer) { }
 
   ngOnInit() {
     this.renderer.invokeElementMethod(this.inputText.nativeElement, "focus");
+    console.log("from chat input:", this.chatKey, ":")
   }
 
   sendChat(text) {
     //don't allow blank values or only spaces!
     var regexp = /\s/gi; //match blank spaces
     var testText = text.value.replace(regexp, "");
-    if (text.value != null && text.value != "" && testText.length > 0)
-    {
+    if (text.value != null && text.value != "" && testText.length > 0) {
       let chatMessage: ChatMessage = new ChatMessage();
 
       chatMessage.chatKey = this.chatKey;

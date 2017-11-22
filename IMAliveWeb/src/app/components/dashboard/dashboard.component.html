@@ -1,3 +1,6 @@
 <div class="ui container">
-  <im-responder-chat></im-responder-chat>
+  <im-chat-list (openChatClick)="openChat($event)"></im-chat-list>
+  <div *ngFor="let myChat of myChats">
+    <im-responder-chat [chatKey]="myChat.$key"></im-responder-chat>
+  </div>
 </div>

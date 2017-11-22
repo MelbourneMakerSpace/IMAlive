@@ -1,0 +1,9 @@
+<table>
+  <tr *ngFor="let chat of waitingChats">
+    <td>{{chat.$key}}</td>
+    <td>{{ chat.chatStart | date: 'EEEE, MMMM d, y, h:mm:ss a' }}</td>
+    <td style="text-align: center">
+      <button class="ui green button" (click)="chatNow(chat.$key)">Chat</button>
+    </td>
+  </tr>
+</table>

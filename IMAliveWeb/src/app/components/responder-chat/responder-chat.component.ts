@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'im-responder-chat',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class ResponderChatComponent implements OnInit {
+  @Input() chatKey: string;
 
   constructor() { }
 
