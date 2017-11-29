@@ -22,6 +22,7 @@ import { VisitorChatComponent } from './components/visitor-chat/visitor-chat.com
 import { ReadWriteChatComponent } from './components/read-write-chat/read-write-chat.component';
 import { SupervisorDashboardComponent } from './components/supervisor-dashboard/supervisor-dashboard.component';
 import { ChatListComponent } from './components/chat-list/chat-list.component';
+import { ChatThumbnailComponent } from './components/chat-thumbnail/chat-thumbnail.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ChatListComponent } from './components/chat-list/chat-list.component';
     VisitorChatComponent,
     ReadWriteChatComponent,
     SupervisorDashboardComponent,
-    ChatListComponent
+    ChatListComponent,
+    ChatThumbnailComponent
   ],
   imports: [
     BrowserModule,

@@ -18,7 +18,7 @@ export class SupervisorDashboardComponent implements OnInit {
         orderByChild: 'chatKey'
       }
     }).subscribe(result => {
-      console.log("got acctiveChats!");
+      console.log("got activeChats!");
     });
 
     //put each chat into a small chat window with info like time and status
