@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, Renderer } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, Renderer, AfterViewInit } from '@angular/core';
 import { AngularFireDatabase } from "angularfire2/database";
 import { ChatMessage } from "models/chatMessage";
 
@@ -8,7 +8,7 @@ import { ChatMessage } from "models/chatMessage";
   styles: [],
   host: { class: "ui input fluid" }
 })
-export class ChatInputComponent implements OnInit {
+export class ChatInputComponent implements OnInit, AfterViewInit {
   @ViewChild('inputText') inputText: ElementRef;
   @Input() chatKey: string = "";
 
@@ -16,7 +16,10 @@ export class ChatInputComponent implements OnInit {
 
   ngOnInit() {
     this.renderer.invokeElementMethod(this.inputText.nativeElement, "focus");
-    console.log("from chat input:", this.chatKey, ":")
+  }
+
+  ngAfterViewInit() {
+    console.log("from chat input:", this.chatKey, ":");
   }
 
   sendChat(text) {
