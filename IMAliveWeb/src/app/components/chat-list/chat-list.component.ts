@@ -30,7 +30,7 @@ export class ChatListComponent implements OnInit {
   }
 
   chatNow(chatKey: string) {
-    //console.log("please connect us to chat key:", chatKey);
+    console.log("please connect us to chat key:", chatKey);
     this.openChatClick.emit(chatKey);
   }
 
