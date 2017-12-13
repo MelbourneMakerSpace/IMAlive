@@ -21,7 +21,7 @@ import { VisitorComponent } from './components/visitor/visitor.component';
 import { VisitorChatComponent } from './components/visitor-chat/visitor-chat.component';
 import { ReadWriteChatComponent } from './components/read-write-chat/read-write-chat.component';
 import { SupervisorDashboardComponent } from './components/supervisor-dashboard/supervisor-dashboard.component';
-import { ChatListComponent } from './components/chat-list/chat-list.component';
+import { ChatListComponent, MyFilterPipe } from './components/chat-list/chat-list.component';
 import { ChatThumbnailComponent } from './components/chat-thumbnail/chat-thumbnail.component';
 
 @NgModule({
@@ -38,7 +38,8 @@ import { ChatThumbnailComponent } from './components/chat-thumbnail/chat-thumbna
     ReadWriteChatComponent,
     SupervisorDashboardComponent,
     ChatListComponent,
-    ChatThumbnailComponent
+    ChatThumbnailComponent,
+    MyFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -49,7 +50,7 @@ import { ChatThumbnailComponent } from './components/chat-thumbnail/chat-thumbna
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
   ],
-  providers: [],
+  providers: [MyFilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

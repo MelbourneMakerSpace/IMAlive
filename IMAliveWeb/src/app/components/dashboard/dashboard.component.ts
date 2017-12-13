@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
 })
 export class DashboardComponent implements OnInit {
   myChats = new Array<any>();
-
+  chatStatusList = ['Waiting', 'Chatting', 'Needs Help'];
   constructor(private loginService: LoginService, private router: Router) {
   }
 
@@ -18,6 +18,7 @@ export class DashboardComponent implements OnInit {
   }
 
   openChat(event) {
+    console.log("dashboard heard request to open chat:", event);
     this.myChats.push(event);
   }
 

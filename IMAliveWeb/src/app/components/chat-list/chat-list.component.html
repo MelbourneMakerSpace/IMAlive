@@ -1,32 +1,16 @@
 <!-- Semantic UI card layout version -->
-<div class="ui grid" >
-  <div *ngFor="let chat of waitingChats">
-    <!-- Displays an info box for each chat to be listed on the counselor dashboard. -->
-    <div class="ui card">
-      <div class="content">
-        <div class="header">Status: {{chat.chatStatus}}</div>
-      </div>
-      <div class="content">
-        <h4 class="ui sub header">Chat Key: {{chat.$key}}</h4>
-        <h4 class="ui sub header">Time: {{ chat.chatStart | date: 'EEEE, MMMM d, y, h:mm:ss a' }}</h4>
-        <h4 class="ui sub header">Counselor: {{chat.ResponderKey}}</h4>
-      </div>
-      <div class="extra content">
-        <button class="ui button" (click)="chatNow(chat.$key)">Help</button>
-      </div>
-    </div>
-  </div><!-- end ngFor -->
+<!-- Displays an info box for each chat to be listed on the counselor dashboard. -->
+<div class="ui card four wide column" *ngFor="let chat of activeChats | myfilter:status">
+  <div class="content">
+    <div class="header">Status: {{chat.chatStatus}}</div>
+  </div>
+  <div class="content">
+    <h4 class="ui sub header">Chat Key: {{chat.$key}}</h4>
+    <h4 class="ui sub header">Time: {{ chat.chatStart | date: 'EEEE, MMMM d, y, h:mm:ss a' }}</h4>
+    <h4 class="ui sub header">Counselor: {{chat.ResponderKey}}</h4>
+  </div>
+  <div class="extra content">
+    <button class="ui button" (click)="chatNow(chat.$key)">Help</button>
+  </div>
 </div>
-
-<!-- table layout version -->
-<!--
-<table>
-  <tr *ngFor="let chat of waitingChats">
-    <td>{{chat.$key}}</td>
-    <td>{{ chat.chatStart | date: 'EEEE, MMMM d, y, h:mm:ss a' }}</td>
-    <td style="text-align: center">
-      <button class="ui green button" (click)="chatNow(chat.$key)">Chat</button>
-    </td>
-  </tr>
-</table>
--->
+<!-- end ngFor -->
