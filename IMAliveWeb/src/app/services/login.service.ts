@@ -19,7 +19,7 @@ export class LoginService {
     this.fireAuth.auth.signOut();
   }
 
-  fromFireBaseAuthPromise(promise: firebase.Promise<any>): Observable<any> {
+  fromFireBaseAuthPromise(promise: Promise<any>): Observable<any> {
     const subject = new Subject<any>();
 
     promise.then(res => {

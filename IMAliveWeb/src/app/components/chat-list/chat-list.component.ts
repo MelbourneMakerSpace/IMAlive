@@ -15,7 +15,7 @@ export class ChatListComponent implements OnInit {
   constructor(private db: AngularFireDatabase) { }
 
   ngOnInit() {
-    this.db.list('activeChats').subscribe(result => {
+    this.db.list('activeChats').valueChanges().subscribe(result => {
 
       this.activeChats = result;
       // console.dir(this.activeChats);

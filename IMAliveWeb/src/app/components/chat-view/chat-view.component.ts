@@ -15,20 +15,17 @@ export class ChatViewComponent implements OnInit {
   constructor(private db: AngularFireDatabase, private renderer: Renderer) { }
 
   ngOnInit() {
+    console.log(this.chatKey);
+    this.db.list('/chatMessages', ref => ref.orderByChild('chatKey').equalTo(this.chatKey))
+      .valueChanges()
+      .subscribe(result => {
+        // console.log(result);
+        this.chatMessages = <ChatMessage[]>result;
+        try {
+          this.chatWindow.nativeElement.scrollTop = this.chatWindow.nativeElement.scrollHeight;
+        } catch (err) { console.log("can't scroll?", err) }
 
-    this.db.list("chatMessages", {
-      query: {
-        orderByChild: 'chatKey',
-        equalTo: this.chatKey
-      }
-    }).subscribe(result => {
-      //console.log(result);
-      this.chatMessages = result;
-      try {
-        this.chatWindow.nativeElement.scrollTop = this.chatWindow.nativeElement.scrollHeight;
-      } catch (err) { console.log("can't scroll?", err) }
-
-    });
+      });
 
 
 

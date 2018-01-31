@@ -13,12 +13,10 @@ export class SupervisorDashboardComponent implements OnInit {
 
   ngOnInit() {
     //get all the active chats (all with active type statuses)
-    this.db.list("activeChats", {
-      query: {
-        orderByChild: 'chatKey'
-      }
-    }).subscribe(result => {
-      console.log("got activeChats!");
+    this.db.list('activeChats',
+      ref => ref.orderByChild('activeChats')
+    ).valueChanges().subscribe(result => {
+      console.log('got activeChats!');
     });
 
     //put each chat into a small chat window with info like time and status

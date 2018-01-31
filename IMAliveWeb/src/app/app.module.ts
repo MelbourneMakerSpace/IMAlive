@@ -24,6 +24,8 @@ import { SupervisorDashboardComponent } from './components/supervisor-dashboard/
 import { ChatListComponent, MyFilterPipe } from './components/chat-list/chat-list.component';
 import { ChatThumbnailComponent } from './components/chat-thumbnail/chat-thumbnail.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
