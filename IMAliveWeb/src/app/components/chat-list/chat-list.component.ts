@@ -15,10 +15,10 @@ export class ChatListComponent implements OnInit {
   constructor(private db: AngularFireDatabase) { }
 
   ngOnInit() {
-    this.db.list("activeChats").subscribe(result => {
+    this.db.list('activeChats').subscribe(result => {
 
       this.activeChats = result;
-      //console.dir(this.activeChats);
+      // console.dir(this.activeChats);
       // try {
       //   this.chatWindow.nativeElement.scrollTop = this.chatWindow.nativeElement.scrollHeight;
       // } catch (err) { console.log("can't scroll?", err) }
@@ -27,7 +27,7 @@ export class ChatListComponent implements OnInit {
   }
 
   chatNow(chatKey: string) {
-    console.log("please connect us to chat key:", chatKey);
+    console.log('please connect us to chat key:', chatKey);
     this.openChatClick.emit(chatKey);
   }
 
@@ -40,6 +40,8 @@ export class ChatListComponent implements OnInit {
 
 export class MyFilterPipe implements PipeTransform {
   transform(items: Chat[], args: any[]): any {
-    return items.filter(item => item.chatStatus.toString().indexOf(args[0]) > -1);
+    if (items) {
+      return items.filter(item => item.chatStatus.toString().indexOf(args[0]) > -1);
+    }
   }
 }

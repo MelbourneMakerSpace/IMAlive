@@ -2,6 +2,7 @@
   .red {
     background-color: red;
   }
+
 </style>
 <div class="ui container">
   <div class="ui grid">
@@ -11,7 +12,8 @@
           <div class="ui grid raised segment padded" [class.loading]="testingLogin">
             <div class="ui top attached label">Please enter a User ID and Password</div>
             <div class="ui row column top">
-              <img class="ui centered image" style="position:relative;left:5px;" src="https://www.imalive.org/images/logo.png" alt="IMAlive Logo">
+              <img class="ui centered image" style="position:relative;left:5px;" src="https://www.imalive.org/wp-content/uploads/2015/07/logo-imalive.png"
+                alt="IMAlive Logo">
             </div>
             <div class="ui centered row input">
               <input placeholder="User ID" type="email" email required [(ngModel)]="login" name="txtLogin" id="IMALogin" #txtLogin />

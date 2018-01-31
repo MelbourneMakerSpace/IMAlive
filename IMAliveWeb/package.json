@@ -31,6 +31,7 @@
   "devDependencies": {
     "@angular/cli": "^1.5.3",
     "@angular/compiler-cli": "^4.0.0",
+    "@angular/flex-layout": "^2.0.0-beta.12",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "codelyzer": "~2.0.0",
