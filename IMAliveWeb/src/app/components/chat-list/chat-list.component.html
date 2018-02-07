@@ -5,12 +5,12 @@
     <div class="header">Status: {{chat.chatStatus}}</div>
   </div>
   <div class="content">
-    <h4 class="ui sub header">Chat Key: {{chat.$key}}</h4>
+    <h4 class="ui sub header">Chat Key: {{chat.key}}</h4>
     <h4 class="ui sub header">Time: {{ chat.chatStart | date: 'EEEE, MMMM d, y, h:mm:ss a' }}</h4>
     <h4 class="ui sub header">Counselor: {{chat.ResponderKey}}</h4>
   </div>
   <div class="extra content">
-    <button class="ui button" (click)="chatNow(chat.$key)">Help</button>
+    <button class="ui button" (click)="chatNow(chat.key)">Chat</button>
   </div>
 </div>
 <!-- end ngFor -->
