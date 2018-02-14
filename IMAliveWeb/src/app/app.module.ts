@@ -25,7 +25,9 @@ import { ChatListComponent, MyFilterPipe } from './components/chat-list/chat-lis
 import { ChatThumbnailComponent } from './components/chat-thumbnail/chat-thumbnail.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatCheckbox } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatCardModule } from '@angular/material';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { MatButtonModule, MatCheckboxModule, MatCheckbox } from '@angular/materi
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
-    BrowserAnimationsModule, MatButtonModule
+    BrowserAnimationsModule, MatButtonModule, MatCardModule,
+    FlexLayoutModule
   ],
   providers: [MyFilterPipe],
   bootstrap: [AppComponent]

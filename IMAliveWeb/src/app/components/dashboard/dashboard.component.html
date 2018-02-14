@@ -1,8 +1,11 @@
-<div class="ui container">
-  <div class="ui four column grid">
-    <im-chat-list *ngFor="let status of chatStatusList" class="row" (openChatClick)="openChat($event)" [status]="status"></im-chat-list>
-    <div class="row">
-      <im-responder-chat class="ui four wide column" *ngFor="let myChat of myChats" [chatKey]="myChat"></im-responder-chat>
-    </div>
-  </div>
+<div fxLayout="column">
+  <mat-card *ngFor="let status of chatStatusList">
+    <mat-card-title>Status: {{status}}
+    </mat-card-title>
+    <im-chat-list fxLayout="row wrap" fxLayoutAlign="start stretch" (openChatClick)="openChat($event)" [status]="status"></im-chat-list>
+
+  </mat-card>
+
+  <im-responder-chat fxLayout="row" fxLayoutAlign="space-around center" *ngFor="let myChat of myChats" [chatKey]="myChat"></im-responder-chat>
+
 </div>

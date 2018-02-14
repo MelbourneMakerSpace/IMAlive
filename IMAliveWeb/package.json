@@ -17,6 +17,7 @@
     "@angular/common": "^5.2.3",
     "@angular/compiler": "^5.2.3",
     "@angular/core": "^5.2.3",
+    "@angular/flex-layout": "^2.0.0-beta.12",
     "@angular/forms": "^5.2.3",
     "@angular/http": "^5.2.3",
     "@angular/material": "^5.2.0",
@@ -32,7 +33,6 @@
   "devDependencies": {
     "@angular/cli": "^1.6.7",
     "@angular/compiler-cli": "^5.2.3",
-    "@angular/flex-layout": "^2.0.0-rc.1",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.96",
     "angularfire2": "^5.0.0-rc.3",

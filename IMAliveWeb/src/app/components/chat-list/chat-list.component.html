@@ -1,16 +1,13 @@
 <!-- Semantic UI card layout version -->
 <!-- Displays an info box for each chat to be listed on the counselor dashboard. -->
-<div class="ui card four wide column" *ngFor="let chat of activeChats | myfilter:status">
-  <div class="content">
-    <div class="header">Status: {{chat.chatStatus}}</div>
-  </div>
-  <div class="content">
-    <h4 class="ui sub header">Chat Key: {{chat.key}}</h4>
-    <h4 class="ui sub header">Time: {{ chat.chatStart | date: 'EEEE, MMMM d, y, h:mm:ss a' }}</h4>
-    <h4 class="ui sub header">Counselor: {{chat.ResponderKey}}</h4>
-  </div>
-  <div class="extra content">
+<mat-card style="background-color:paleturquoise;width:25%;" *ngFor="let chat of activeChats | myfilter:status">
+  <mat-card-content>
+    <br>Time In Queue: {{ chat.hours | number:'2.0-0' }}:{{ chat.minutes | number:'2.0-0' }}:{{ chat.seconds | number:'2.0-0'
+    }}
+    <br>Counselor: {{chat.ResponderKey || 'none'}}
+  </mat-card-content>
+  <mat-card-actions fxLayoutAlign="center center">
     <button mat-raised-button (click)="chatNow(chat.key)">Chat</button>
-  </div>
-</div>
+  </mat-card-actions>
+</mat-card>
 <!-- end ngFor -->
