@@ -10,6 +10,7 @@ import { Chat } from 'models/chat';
 
 export class ChatListComponent implements OnInit {
   activeChats: any;
+  currentDate = Date.now();
   @Input() status: string;
   @Output() openChatClick: EventEmitter<string> = new EventEmitter<string>();
   constructor(private db: AngularFireDatabase) { }
@@ -18,9 +19,11 @@ export class ChatListComponent implements OnInit {
     this.db.list<Chat[]>('activeChats').snapshotChanges().subscribe(results => {
       this.activeChats = results.map(c => ({
         key: c.payload.key,
+        millis: ((new Date().getTime() - new Date(c.payload.val().chatStart).getTime())),
         seconds: ((new Date().getTime() - new Date(c.payload.val().chatStart).getTime()) / 1000) % 60,
         minutes: Math.floor((((new Date().getTime() - new Date(c.payload.val().chatStart).getTime()) / 1000) / 60) % 60),
-        hours: Math.floor((((new Date().getTime() - new Date(c.payload.val().chatStart).getTime()) / 1000) / 3600) % 60),
+        hours: Math.floor((((new Date().getTime() - new Date(c.payload.val().chatStart).getTime()) / 1000) / 3600) % 24),
+        days: Math.floor((((new Date().getTime() - new Date(c.payload.val().chatStart).getTime()) / 1000) / 3600 / 24)),
         ...c.payload.val()
       }));
     }
@@ -29,9 +32,11 @@ export class ChatListComponent implements OnInit {
     setInterval(() => {
       if (this.activeChats != undefined) {
         this.activeChats.forEach(chat => {
-          chat.seconds = ((new Date().getTime() - new Date(chat.chatStart).getTime()) / 1000) % 60;
+          chat.millis = ((new Date().getTime() - new Date(chat.chatStart).getTime())),
+            chat.seconds = ((new Date().getTime() - new Date(chat.chatStart).getTime()) / 1000) % 60;
           chat.minutes = Math.floor((((new Date().getTime() - new Date(chat.chatStart).getTime()) / 1000) / 60) % 60);
-          chat.hours = Math.floor((((new Date().getTime() - new Date(chat.chatStart).getTime()) / 1000) / 3600) % 60);
+          chat.hours = Math.floor((((new Date().getTime() - new Date(chat.chatStart).getTime()) / 1000) / 3600) % 24);
+          chat.days = Math.floor((((new Date().getTime() - new Date(chat.chatStart).getTime()) / 1000) / 3600 / 24) % 60)
         });
       }
     }, 1000)

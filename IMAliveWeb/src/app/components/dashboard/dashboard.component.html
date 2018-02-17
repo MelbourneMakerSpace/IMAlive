@@ -1,11 +1,8 @@
-<div fxLayout="column">
+<div fxLayout="column" fxLayoutGap="15px" style="background-color:whitesmoke">
   <mat-card *ngFor="let status of chatStatusList">
     <mat-card-title>Status: {{status}}
     </mat-card-title>
     <im-chat-list fxLayout="row wrap" fxLayoutAlign="start stretch" (openChatClick)="openChat($event)" [status]="status"></im-chat-list>
-
   </mat-card>
-
   <im-responder-chat fxLayout="row" fxLayoutAlign="space-around center" *ngFor="let myChat of myChats" [chatKey]="myChat"></im-responder-chat>
-
 </div>
