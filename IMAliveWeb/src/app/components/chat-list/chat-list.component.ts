@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Input, Output, Pipe, PipeTransform } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Chat } from 'models/chat';
+import { StateService } from '../../services/state.service';
 
 @Component({
   selector: 'im-chat-list',
@@ -13,7 +14,7 @@ export class ChatListComponent implements OnInit {
   currentDate = Date.now();
   @Input() status: string;
   @Output() openChatClick: EventEmitter<string> = new EventEmitter<string>();
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase, private stateService: StateService) { }
 
   ngOnInit() {
     this.db.list<Chat[]>('activeChats').snapshotChanges().subscribe(results => {
@@ -30,21 +31,23 @@ export class ChatListComponent implements OnInit {
     );
 
     setInterval(() => {
-      if (this.activeChats != undefined) {
+      if (this.activeChats !== undefined) {
         this.activeChats.forEach(chat => {
           chat.millis = ((new Date().getTime() - new Date(chat.chatStart).getTime())),
             chat.seconds = ((new Date().getTime() - new Date(chat.chatStart).getTime()) / 1000) % 60;
           chat.minutes = Math.floor((((new Date().getTime() - new Date(chat.chatStart).getTime()) / 1000) / 60) % 60);
           chat.hours = Math.floor((((new Date().getTime() - new Date(chat.chatStart).getTime()) / 1000) / 3600) % 24);
-          chat.days = Math.floor((((new Date().getTime() - new Date(chat.chatStart).getTime()) / 1000) / 3600 / 24) % 60)
+          chat.days = Math.floor((((new Date().getTime() - new Date(chat.chatStart).getTime()) / 1000) / 3600 / 24) % 60);
         });
       }
-    }, 1000)
-    //console.dir(activechats);
+    }, 1000);
+    // console.dir(activechats);
   }
 
   chatNow(chatKey: string) {
     console.log('please connect us to chat key:', chatKey);
+    this.stateService.myChats.push(chatKey);
+    this.stateService.setTab(1);
     this.openChatClick.emit(chatKey);
   }
 

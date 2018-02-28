@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from "app/services/login.service";
-import { Router } from "@angular/router";
+import { LoginService } from 'app/services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'im-dashboard',
@@ -14,12 +14,12 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    //if (!this.loginService.user) { this.router.navigateByUrl("/Login/Dashboard", { skipLocationChange: true }); }
+    // if (!this.loginService.user) { this.router.navigateByUrl("/Login/Dashboard", { skipLocationChange: true }); }
   }
 
   openChat(event) {
-    console.log("dashboard heard request to open chat:", event);
-    this.myChats.push(event);
+    // console.log("dashboard heard request to open chat:", event);
+    // this.myChats.push(event);
   }
 
 }

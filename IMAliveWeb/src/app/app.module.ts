@@ -25,9 +25,11 @@ import { ChatListComponent, MyFilterPipe } from './components/chat-list/chat-lis
 import { ChatThumbnailComponent } from './components/chat-thumbnail/chat-thumbnail.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatCardModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatCardModule, MatMenuModule, MatIconModule, MatTabsModule } from '@angular/material';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ActiveChatsComponent } from './components/active-chats/active-chats.component';
+import { StateService } from './services/state.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     SupervisorDashboardComponent,
     ChatListComponent,
     ChatThumbnailComponent,
-    MyFilterPipe
+    MyFilterPipe,
+    ActiveChatsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,10 +57,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
-    BrowserAnimationsModule, MatButtonModule, MatCardModule,
+    BrowserAnimationsModule, MatButtonModule, MatCardModule, MatMenuModule, MatIconModule, MatTabsModule,
     FlexLayoutModule
   ],
-  providers: [MyFilterPipe],
+  providers: [MyFilterPipe, StateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
