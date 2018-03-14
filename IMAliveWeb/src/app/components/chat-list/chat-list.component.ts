@@ -46,7 +46,7 @@ export class ChatListComponent implements OnInit {
 
   chatNow(chatKey: string) {
     console.log('please connect us to chat key:', chatKey);
-    this.stateService.myChats.push(chatKey);
+    this.stateService.connectToChat(chatKey);
     this.stateService.setTab(1);
     this.openChatClick.emit(chatKey);
   }

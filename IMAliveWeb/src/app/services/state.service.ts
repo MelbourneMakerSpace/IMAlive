@@ -13,4 +13,10 @@ export class StateService {
     this.tabChange.next(tab);
   }
 
+  connectToChat(chatKey) {
+    if (!this.myChats.some(x => x === chatKey)) {
+      this.myChats.push(chatKey);
+    }
+  }
+
 }
