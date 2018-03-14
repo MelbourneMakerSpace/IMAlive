@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
   myChats = new Array<any>();
-  chatStatusList = ['Waiting', 'Chatting', 'Needs Help'];
+  chatStatusList = ['Waiting', 'Active', 'Needs Help'];
   constructor(private loginService: LoginService, private router: Router) {
   }
 

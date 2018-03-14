@@ -30,6 +30,7 @@ import { MatButtonModule, MatCheckboxModule, MatCardModule, MatMenuModule, MatIc
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ActiveChatsComponent } from './components/active-chats/active-chats.component';
 import { StateService } from './services/state.service';
+import { ChatService } from './services/chat.service';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,7 @@ import { StateService } from './services/state.service';
     BrowserAnimationsModule, MatButtonModule, MatCardModule, MatMenuModule, MatIconModule, MatTabsModule,
     FlexLayoutModule
   ],
-  providers: [MyFilterPipe, StateService],
+  providers: [MyFilterPipe, StateService, ChatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

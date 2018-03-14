@@ -2,6 +2,8 @@ import { Component, OnInit, EventEmitter, Input, Output, Pipe, PipeTransform } f
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Chat } from 'models/chat';
 import { StateService } from '../../services/state.service';
+import { ChatService } from '../../services/chat.service';
+import { ChatStatus } from '../../enums/ChatStatus.enum';
 
 @Component({
   selector: 'im-chat-list',
@@ -14,7 +16,10 @@ export class ChatListComponent implements OnInit {
   currentDate = Date.now();
   @Input() status: string;
   @Output() openChatClick: EventEmitter<string> = new EventEmitter<string>();
-  constructor(private db: AngularFireDatabase, private stateService: StateService) { }
+  constructor(private db: AngularFireDatabase,
+    private stateService: StateService,
+    private chatService: ChatService
+  ) { }
 
   ngOnInit() {
     this.db.list<Chat[]>('activeChats').snapshotChanges().subscribe(results => {
@@ -46,6 +51,7 @@ export class ChatListComponent implements OnInit {
 
   chatNow(chatKey: string) {
     console.log('please connect us to chat key:', chatKey);
+    this.chatService.setChatStatus(chatKey, ChatStatus.Active);
     this.stateService.connectToChat(chatKey);
     this.stateService.setTab(1);
     this.openChatClick.emit(chatKey);
