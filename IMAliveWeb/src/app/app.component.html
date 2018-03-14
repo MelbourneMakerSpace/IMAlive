@@ -1,4 +1,4 @@
-<mat-tab-group [selectedIndex]="selectedTab">
+<mat-tab-group [selectedIndex]="selectedTab" (selectedTabChange)="tabSelected($event)">
   <mat-tab label="Dashboard">
     <router-outlet>
     </router-outlet>

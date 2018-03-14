@@ -24,6 +24,10 @@ export class AppComponent implements OnInit {
     this.stateService.tabChange.subscribe(tab => this.selectedTab = tab);
   }
 
+  tabSelected(event) {
+    this.stateService.setTab(event.index);
+  }
+
   logout() {
     this.loginService.logout();
     this.router.navigate(['/Login']);
