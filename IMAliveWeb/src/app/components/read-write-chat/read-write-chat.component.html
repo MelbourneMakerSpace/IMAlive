@@ -1,6 +1,13 @@
 <div class="ui raised segments">
   <div class="ui fluid top attached header segment">
-    Responder Chat
+    <div>
+      Responder Chat ({{status}})
+    </div>
+    <div style="text-align:right">
+      <button mat-icon-button title="ask for help" (click)="needHelp()">
+        <mat-icon style="color:red;">announcement</mat-icon>
+      </button>
+    </div>
   </div>
   <div class="ui segment" style="margin:0;height:50vh;padding:0px 0px 0px 5px;">
     <im-chat-view [chatKey]="chatKey"></im-chat-view>
